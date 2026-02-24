@@ -1,6 +1,7 @@
 package prog2.model;
+import java.time.chrono.*;
 
-public abstract class Allotjament implements InAllotjament{
+public class Allotjament implements InAllotjament{
     private String nom;
     private String id;
     private long estadaMinimaALTA;
@@ -30,6 +31,19 @@ public abstract class Allotjament implements InAllotjament{
         this.id = id;
     }
 
-    //falten els mètodes que depenen del tipus d'allotjament que no sé com fer-ho
+    @Override
+    public long getEstadaMinima(Temp temp) {
+        return 0;
+    }
+
+    @Override
+    public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
+
+    }
+
+    @Override
+    public boolean correcteFuncionament() {
+        return false;
+    }
 }
 

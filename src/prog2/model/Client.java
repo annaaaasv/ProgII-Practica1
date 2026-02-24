@@ -9,10 +9,11 @@ public class Client implements InClient{
         this.dni = dni;
     }
 
-    @Override //què és això, cal posar-ho?
+    @Override
     public String getNom(){
         return nom;
     }
+
     @Override
     public String getDni(){
         return dni;
@@ -28,5 +29,9 @@ public class Client implements InClient{
         this.dni = dni;
     }
 
-    //falta implementar el mètode toString, per mostrarClient?????
+    @Override
+    public String toString(){ //falta aquest mètode
+        return null;
+    }
+
 }
