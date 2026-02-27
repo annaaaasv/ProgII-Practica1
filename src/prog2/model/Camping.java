@@ -50,14 +50,17 @@ public class Camping implements InCamping{
         return llistaClients.size();
     }
 
+    //quin puto nom els hi poso als nous objectes
     @Override
-    public void afegirClient(String nom_, String dni_) {
-
+    public void afegirClient(String nom_, String dni_) { //està bé? No sé quin nom posar-li
+        Client nou = new Client(nom_, dni_);
+        llistaClients.add(nou); //això està bé?
     }
 
     @Override
-    public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) {
-
+    public void afegirParcela(String nom_, String idAllotjament_, float metres, boolean connexioElectrica) { //sha de crear i afegir parcela no?
+        Parcela nou = new Parcela(nom_, idAllotjament_, metres, connexioElectrica);
+        llistaAllotjaments.add(nou);
     }
 
     @Override
@@ -95,4 +98,10 @@ public class Camping implements InCamping{
         return null;
     }
 
+    public static InAllotjament.Temp getTemporada(LocalDate data){
+        int dia = data.getDayOfMonth();
+        int mes = data.getMonthValue();
+        //falta
+        return null;
+    }
 }

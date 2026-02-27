@@ -1,7 +1,16 @@
 package prog2.model;
 
-public abstract class Casa extends Allotjament{
+public abstract class Casa extends Allotjament { //casa és abstracta???
+    //tots els atributs comuns de tots els tipus de casa???? publics???
+    //comuns son nom, id, habitacions, mida, placesPersones
+    public String nom;
+    public String idAllotjament;
+    public String mida;
+    public int habitacions;
+    public int placesPersones;
 
+
+    //fer super aqui??? esque perque hi ha aquest metode a Allotjament i a Casa?
     @Override
     public long getEstadaMinima(Temp temp) {
         return 0;
@@ -12,8 +21,21 @@ public abstract class Casa extends Allotjament{
 
     }
 
+    //no va aqui aquest mètode va a Allotjament crec
     @Override
     public boolean correcteFuncionament() {
+        //posar un switch segons la casa??? o molts ifs? o ns
         return false;
+    }
+
+
+//toString i correcteFuncionament suposo que son metodes que es defineixen aqui i despres simplementen a cada subclasse o que
+
+    @Override
+    public String toString() { //EM DEIA QUE ESTAVA MALAMENT he clicat una cosa i ara em surt bé
+        System.out.println("Nom= " + nom + ", Id= " + idAllotjament + ", estada mínima en temp ALTA: " + estadaMinimaALTA +
+                "estada mínima en temp BAIXA: " + getEstadaMinima(temp)); //van els getters es estadaminima o els atributs? té més sentit q vagin els getters potser
+        //pero que poso dins del getter?
+        return null;
     }
 }

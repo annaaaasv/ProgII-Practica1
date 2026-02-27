@@ -38,7 +38,8 @@ public class Allotjament implements InAllotjament{
 
     @Override
     public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
-
+        estadaMinimaALTA = estadaMinimaALTA_;
+        estadaMinimaBAIXA = estadaMinimaBAIXA_;
     }
 
     @Override

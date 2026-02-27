@@ -3,21 +3,26 @@ package prog2.model;
 import java.time.LocalDate;
 
 public class Reserva implements InReserva {
+    private Client client;
+    private Allotjament allotjament;
     private LocalDate dataEntrada;
     private LocalDate dataSortida;
 
-    public Reserva(){ //constructor, paràmetres igual que afegirReserva
+    //id i dni son atributs del client, client es atribut de reserva?
+    public Reserva(String id, String dni, LocalDate dataEntrada, LocalDate dataSortida){
+
+        this.dataEntrada = dataEntrada;
+        this.dataSortida = dataSortida;
 
     }
 
     @Override
     public Allotjament getAllotjament_() {
-        return null;
+        return allotjament;
     }
-
     @Override
     public Client getClient() {
-        return null;
+        return client;
     }
     @Override
     public LocalDate getDataEntrada(){
@@ -30,13 +35,13 @@ public class Reserva implements InReserva {
 
     @Override
     public void setAllotjament_(Allotjament allotjament_) {
-
+        allotjament = allotjament_;
     }
-
     @Override
     public void setClient(Client client_) {
-
+        client = client_;
     }
+
     @Override
     public void setDataEntrada(LocalDate dataEntrada) {
         this.dataEntrada = dataEntrada;
