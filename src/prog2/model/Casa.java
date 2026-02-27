@@ -1,14 +1,20 @@
 package prog2.model;
 
 public abstract class Casa extends Allotjament { //casa és abstracta???
-    //tots els atributs comuns de tots els tipus de casa???? publics???
-    //comuns son nom, id, habitacions, mida, placesPersones
-    public String nom;
-    public String idAllotjament;
-    public String mida;
-    public int habitacions;
-    public int placesPersones;
+    //tots els atributs comuns de tots els tipus de casa????
+    private String nom;
+    private String idAllotjament;
+    private String mida;
+    private int habitacions;
+    private int placesPersones;
 
+    public Casa(String nom, String idAllotjament, String mida, int habitacions, int placesPersones){
+        this.nom = nom;
+        this.idAllotjament = idAllotjament;
+        this.mida = mida;
+        this.habitacions = habitacions;
+        this.placesPersones = placesPersones;
+    }
 
     //fer super aqui??? esque perque hi ha aquest metode a Allotjament i a Casa?
     @Override
