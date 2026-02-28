@@ -8,9 +8,9 @@ public class Reserva implements InReserva {
     private LocalDate dataEntrada;
     private LocalDate dataSortida;
 
-    //id i dni son atributs del client, client es atribut de reserva?
-    public Reserva(String id, String dni, LocalDate dataEntrada, LocalDate dataSortida){
 
+    public Reserva(String id, String nom, LocalDate dataEntrada, LocalDate dataSortida){
+        //no se fer aixo perque el id es d'allotjament i nom de client
         this.dataEntrada = dataEntrada;
         this.dataSortida = dataSortida;
 

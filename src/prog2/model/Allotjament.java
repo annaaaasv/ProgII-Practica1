@@ -1,14 +1,25 @@
 package prog2.model;
 import java.time.chrono.*;
 
-public class Allotjament implements InAllotjament{
+
+public abstract class Allotjament implements InAllotjament{
     private String nom;
-    private String id;
+    private String idAllotjament;
     private long estadaMinimaALTA;
     private long estadaMinimaBAIXA;
 
-    public Allotjament(){ //constructor
+    public Allotjament(String nom, String idAllotjament, long estadaMinimaALTA, long estadaMinimaBAIXA){
+        this.nom = nom;
+        this.idAllotjament = idAllotjament;
+        this.estadaMinimaALTA = estadaMinimaALTA;
+        this.estadaMinimaBAIXA = estadaMinimaBAIXA;
+    }
 
+    public Allotjament(String nom, String idAllotjament){
+        this.nom = nom;
+        this.idAllotjament = idAllotjament;
+        this.estadaMinimaALTA = 0;
+        this.estadaMinimaBAIXA = 0;
     }
 
     @Override
@@ -18,7 +29,7 @@ public class Allotjament implements InAllotjament{
 
     @Override
     public String getId() {
-        return id;
+        return idAllotjament;
     }
 
     @Override
@@ -27,24 +38,34 @@ public class Allotjament implements InAllotjament{
     }
 
     @Override
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String idAllotjament) {
+        this.idAllotjament = idAllotjament;
     }
 
     @Override
     public long getEstadaMinima(Temp temp) {
-        return 0;
+        if(temp == Temp.BAIXA)
+            return estadaMinimaBAIXA;
+        else
+            return estadaMinimaALTA;
     }
 
     @Override
     public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
         estadaMinimaALTA = estadaMinimaALTA_;
         estadaMinimaBAIXA = estadaMinimaBAIXA_;
+        //falta
     }
 
     @Override
-    public boolean correcteFuncionament() {
-        return false;
+    public String toString(){
+        return "Nom= " + nom + ", Id= " + idAllotjament+ ", estada mínima en temp ALTA: " + estadaMinimaALTA +
+                "estada mínima en temp BAIXA: " + estadaMinimaBAIXA + ".";
     }
+
+
+    //mètode que s'implementa a cada subclasse
+    public abstract boolean correcteFuncionament();
+
 }
 

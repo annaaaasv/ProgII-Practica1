@@ -15,4 +15,16 @@ public class Glamping extends Casa{
         this.casaMascota = casaMascota;
 
     }
+
+    @Override
+    public String toString(){
+        return super.toString() +
+                "material= " + material + ", casa mascota= " + casaMascota + "}";
+    }
+
+    @Override
+    public boolean correcteFuncionament(){
+        return casaMascota;
+    }
+
 }

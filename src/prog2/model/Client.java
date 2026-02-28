@@ -30,8 +30,8 @@ public class Client implements InClient{
     }
 
     @Override
-    public String toString(){ //falta aquest mètode
-        return null;
+    public String toString(){
+        return "Nom= " + nom + ", dni= " + dni;
     }
 
 }

@@ -17,4 +17,21 @@ public class Bungalow extends Casa {
         this.aireFred = aireFred;
     }
 
+    public boolean isAireFred(){
+        return aireFred;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() +
+                ", places pàrquing= " + placesParquing + ", terrassa= " + terrassa + ", tv= " + tv;
+    }
+
+
+    @Override
+    public boolean correcteFuncionament(){
+        return aireFred;
+    }
+
+
 }
