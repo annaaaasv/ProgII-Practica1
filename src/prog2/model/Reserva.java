@@ -9,8 +9,9 @@ public class Reserva implements InReserva {
     private LocalDate dataSortida;
 
 
-    public Reserva(String id, String nom, LocalDate dataEntrada, LocalDate dataSortida){
-        //no se fer aixo perque el id es d'allotjament i nom de client
+    public Reserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida){
+        this.allotjament = allotjament;
+        this.client = client;
         this.dataEntrada = dataEntrada;
         this.dataSortida = dataSortida;
 

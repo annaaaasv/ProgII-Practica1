@@ -4,7 +4,7 @@ import prog2.vista.ExcepcioReserva;
 
 import java.time.LocalDate;
 
-public class LlistaReserves implements InLlistaReserves{
+public class LlistaReserves implements InLlistaReserves {
     private int numReserves;
 
     @Override
@@ -16,4 +16,14 @@ public class LlistaReserves implements InLlistaReserves{
     public int getNumReserves() {
         return numReserves;
     }
+
+
+    public boolean allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
+        return false;
+    }
+
+    public boolean isEstadaMinima(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
+        return false;
+    }
+
 }

@@ -10,6 +10,19 @@ public class Parcela extends Allotjament{
         this.connexioElectrica = connexioElectrica;
     }
 
+    public float getMida(){
+        return metres;
+    }
+    public void setMida(float metres){
+        this.metres = metres;
+    }
+    public boolean isConnexioElectrica(){
+        return connexioElectrica;
+    }
+    public void setConnexioElectrica(boolean connexioElectrica){
+        this.connexioElectrica = connexioElectrica;
+    }
+
     @Override
     public boolean correcteFuncionament(){
         return connexioElectrica;
@@ -17,7 +30,7 @@ public class Parcela extends Allotjament{
 
     @Override
     public String toString(){
-        return super.toString() + ", Parcela{mida= " + metres + ", connexió elèctrica= " + connexioElectrica + "}";
+        return super.toString();
     }
 
 }

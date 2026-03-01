@@ -68,6 +68,7 @@ class ParcelaTest {
     @Test
     void testToString() {
         String expected = "Nom=Parcela A, Id=P001, estada mínima en temp ALTA: 4, estada mínima en temp BAIXA: 2.";
+        System.out.println(parcela.toString());
         assertTrue(parcela.toString().contains(expected));
     }
 }
