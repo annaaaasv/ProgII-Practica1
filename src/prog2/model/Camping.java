@@ -5,6 +5,7 @@ import prog2.vista.ExcepcioReserva;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Objects;
 
 public class Camping implements InCamping{
     private String nom;
@@ -14,6 +15,9 @@ public class Camping implements InCamping{
 
     public Camping(String nom){ //constructor
         this.nom = nom;
+        this.llistaReserves = new LlistaReserves();
+        this.llistaAllotjaments = new ArrayList<>();
+        this.llistaClients = new ArrayList<>();
     }
 
     @Override
@@ -51,7 +55,6 @@ public class Camping implements InCamping{
         return llistaClients.size();
     }
 
-    //quin puto nom els hi poso als nous objectes
     @Override
     public void afegirClient(String nom_, String dni_) {
         Client nou = new Client(nom_, dni_);
@@ -90,7 +93,9 @@ public class Camping implements InCamping{
 
     @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
-        //falta
+        Allotjament allotjament = buscarAllotjament(id_);
+        Client client = buscarClient(dni_);
+        llistaReserves.afegirReserva(allotjament, client, dataEntrada, dataSortida);
     }
 
     @Override
@@ -121,5 +126,27 @@ public class Camping implements InCamping{
             return InAllotjament.Temp.ALTA;
         }
         return InAllotjament.Temp.BAIXA;
+    }
+
+    public Allotjament buscarAllotjament(String idAllotjament) throws ExcepcioReserva{
+        Iterator<Allotjament> it = llistaAllotjaments.iterator();
+        while(it.hasNext()) {
+            Allotjament a = it.next();
+            if (Objects.equals(a.getId(), idAllotjament)) {
+                return a;
+            }
+        }
+        throw new ExcepcioReserva("L'allotjament amb id " + idAllotjament + " no existeix");
+    }
+
+    public Client buscarClient(String dni) throws ExcepcioReserva{
+        Iterator<Client> it = llistaClients.iterator();
+        while(it.hasNext()) {
+            Client c = it.next();
+            if (Objects.equals(c.getDni(), dni)) {
+                return c;
+            }
+        }
+        throw new ExcepcioReserva("El client amb DNI " + dni + " no existeix");
     }
 }
