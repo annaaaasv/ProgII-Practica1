@@ -1,5 +1,4 @@
 package prog2.model;
-import java.time.chrono.*;
 
 
 public abstract class Allotjament implements InAllotjament{
@@ -13,13 +12,6 @@ public abstract class Allotjament implements InAllotjament{
         this.idAllotjament = idAllotjament;
         this.estadaMinimaALTA = estadaMinimaALTA;
         this.estadaMinimaBAIXA = estadaMinimaBAIXA;
-    }
-
-    public Allotjament(String nom, String idAllotjament){
-        this.nom = nom;
-        this.idAllotjament = idAllotjament;
-        this.estadaMinimaALTA = 0;
-        this.estadaMinimaBAIXA = 0;
     }
 
     @Override
@@ -54,7 +46,6 @@ public abstract class Allotjament implements InAllotjament{
     public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
         estadaMinimaALTA = estadaMinimaALTA_;
         estadaMinimaBAIXA = estadaMinimaBAIXA_;
-        //falta
     }
 
     @Override

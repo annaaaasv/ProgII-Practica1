@@ -115,7 +115,11 @@ public class Camping implements InCamping{
     public static InAllotjament.Temp getTemporada(LocalDate data){
         int dia = data.getDayOfMonth();
         int mes = data.getMonthValue();
-        //falta
-        return null;
+        if ((mes > 3 && mes < 9) ||
+                (mes == 3 && dia >= 21) ||
+                (mes == 9 && dia <= 20)) {
+            return InAllotjament.Temp.ALTA;
+        }
+        return InAllotjament.Temp.BAIXA;
     }
 }
