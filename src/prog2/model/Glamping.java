@@ -19,7 +19,7 @@ public class Glamping extends Casa{
     @Override
     public String toString(){
         return super.toString() +
-                "material= " + material + ", casa mascota= " + casaMascota + "}";
+                ", material= " + material + ", casa mascota= " + casaMascota + "}";
     }
 
     @Override

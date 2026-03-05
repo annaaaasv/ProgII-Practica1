@@ -16,6 +16,6 @@ public abstract class Casa extends Allotjament { //casa és abstracta???
     public String toString() {
         return super.toString() +
                 getClass().getSimpleName() +
-                "{mida= " + mida + ", habitacions= " + habitacions + "places persones= " + placesPersones;
+                "{mida= " + mida + ", habitacions= " + habitacions + ", places persones= " + placesPersones;
     }
 }

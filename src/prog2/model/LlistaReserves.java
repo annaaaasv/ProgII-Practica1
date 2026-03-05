@@ -25,7 +25,7 @@ public class LlistaReserves implements InLlistaReserves {
         }
         else if(!allotjamentDisponible(allotjament, dataEntrada, dataSortida)){
             throw new ExcepcioReserva("L'allotjament amb identificador " + allotjament.getId() + " no està disponible en la data demanada " +
-                    dataEntrada + " pel client " + client + " amb DNI: " + client.getDni() + ".");
+                    dataEntrada + " pel client " + client);
         }
         else{
             Reserva nova = new Reserva(allotjament, client, dataEntrada, dataSortida);

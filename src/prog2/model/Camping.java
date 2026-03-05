@@ -114,7 +114,20 @@ public class Camping implements InCamping{
 
     @Override
     public Allotjament getAllotjamentEstadaMesCurta(InAllotjament.Temp temp) {
-        return null;
+
+        Iterator<Allotjament> it = llistaAllotjaments.iterator();
+
+        Allotjament millor = null;
+
+        while(it.hasNext()){
+            Allotjament a = it.next();
+            if(millor == null ||
+                    a.getEstadaMinima(temp) < millor.getEstadaMinima(temp)){
+                millor = a;
+            }
+        }
+
+        return millor;
     }
 
     public static InAllotjament.Temp getTemporada(LocalDate data){
@@ -136,7 +149,7 @@ public class Camping implements InCamping{
                 return a;
             }
         }
-        throw new ExcepcioReserva("L'allotjament amb id " + idAllotjament + " no existeix");
+        throw new ExcepcioReserva("L'allotjament amb id " + idAllotjament + " no existeix.");
     }
 
     public Client buscarClient(String dni) throws ExcepcioReserva{
@@ -147,6 +160,6 @@ public class Camping implements InCamping{
                 return c;
             }
         }
-        throw new ExcepcioReserva("El client amb DNI " + dni + " no existeix");
+        throw new ExcepcioReserva("El client amb DNI " + dni + " no existeix.");
     }
 }
