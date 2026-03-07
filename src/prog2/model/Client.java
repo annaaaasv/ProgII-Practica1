@@ -8,22 +8,25 @@ public class Client implements InClient{
         this.nom = nom;
         this.dni = dni;
     }
-
+    //Obté el nom del client
     @Override
     public String getNom(){
         return nom;
     }
 
+    //Obté del dni del client
     @Override
     public String getDni(){
         return dni;
     }
 
+    //Estableix el nom del client
     @Override
     public void setNom(String nom) {
         this.nom = nom;
     }
 
+    //Estableix el dni del client
     @Override
     public void setDni(String dni) {
         this.dni = dni;

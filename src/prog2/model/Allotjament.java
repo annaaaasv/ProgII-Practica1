@@ -13,27 +13,27 @@ public abstract class Allotjament implements InAllotjament{
         this.estadaMinimaALTA = estadaMinimaALTA;
         this.estadaMinimaBAIXA = estadaMinimaBAIXA;
     }
-
+    /** {@inheritDoc} */
     @Override
     public String getNom() {
         return nom;
     }
-
+    /** {@inheritDoc} */
     @Override
     public String getId() {
         return idAllotjament;
     }
-
+    /** {@inheritDoc} */
     @Override
     public void setNom(String nom){
         this.nom = nom;
     }
-
+    /** {@inheritDoc} */
     @Override
     public void setId(String idAllotjament) {
         this.idAllotjament = idAllotjament;
     }
-
+    /** {@inheritDoc} */
     @Override
     public long getEstadaMinima(Temp temp) {
         if(temp == Temp.BAIXA)
@@ -41,7 +41,7 @@ public abstract class Allotjament implements InAllotjament{
         else
             return estadaMinimaALTA;
     }
-
+    /** {@inheritDoc} */
     @Override
     public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
         estadaMinimaALTA = estadaMinimaALTA_;
@@ -54,8 +54,8 @@ public abstract class Allotjament implements InAllotjament{
                 ", estada mínima en temp BAIXA: " + estadaMinimaBAIXA + ".";
     }
 
-
-    //mètode que s'implementa a cada subclasse
+    /** {@inheritDoc} */
+    @Override
     public abstract boolean correcteFuncionament();
 
 }

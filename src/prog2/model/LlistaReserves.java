@@ -16,7 +16,7 @@ public class LlistaReserves implements InLlistaReserves {
         this.llistaReserves = new ArrayList<>();
     }
 
-
+    /** {@inheritDoc} */
     @Override
     public void afegirReserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         if(!isEstadaMinima(allotjament, dataEntrada, dataSortida)){
@@ -33,13 +33,13 @@ public class LlistaReserves implements InLlistaReserves {
             numReserves++;
         }
     }
-
+    /** {@inheritDoc} */
     @Override
     public int getNumReserves() {
         return numReserves;
     }
 
-
+    //Comprova si un allotjament està disponible segons les dates de l'estada
     public boolean allotjamentDisponible(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
         Iterator<Reserva> it = llistaReserves.iterator();
         while(it.hasNext()) {
@@ -56,6 +56,7 @@ public class LlistaReserves implements InLlistaReserves {
         return true;
     }
 
+    //Comprova si l'estada és superior a l'estada mínima de l'allotjament escollit en les dates escollides
     public boolean isEstadaMinima(Allotjament allotjament, LocalDate dataEntrada, LocalDate dataSortida){
         long estada = ChronoUnit.DAYS.between(dataEntrada, dataSortida);
 
