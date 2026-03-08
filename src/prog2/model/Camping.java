@@ -153,7 +153,7 @@ public class Camping implements InCamping{
                 return a;
             }
         }
-        throw new ExcepcioReserva("L'allotjament amb id " + idAllotjament + " no existeix.");
+        throw new ExcepcioReserva("L'allotjament amb id " + idAllotjament + " no existeix");
     }
 
     //Comprova si un client existeix i el retorna o llança una excepció
@@ -165,6 +165,6 @@ public class Camping implements InCamping{
                 return c;
             }
         }
-        throw new ExcepcioReserva("El client amb DNI " + dni + " no existeix.");
+        throw new ExcepcioReserva("El client amb DNI " + dni + " no existeix");
     }
 }
